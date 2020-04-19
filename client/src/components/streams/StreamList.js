@@ -16,8 +16,12 @@ class StreamList extends React.Component {
             {this.renderAdmin(stream.id, stream.userId)}
             <i className="large middle aligned icon camera"/>
             <div className="content">
-              {stream.title}
-              <div className="description">{stream.description}</div>
+              <Link className="header" to={`/streams/${stream.id}`}>
+                {stream.title}
+              </Link>
+              <div className="description">
+                {stream.description}
+              </div>
             </div>
           </div>
       );
@@ -31,7 +35,7 @@ class StreamList extends React.Component {
             <Link className="ui button primary"
                   to={`/streams/edit/${streamId}`}>Edit</Link>
             <Link className="ui button negative"
-                  to={`/streams/edit/${streamId}`}>Delete</Link>
+                  to={`/streams/delete/${streamId}`}>Delete</Link>
           </div>
       );
     }
